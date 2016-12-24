@@ -58,6 +58,13 @@ func NewHandler(callback func(*Alert) error) http.Handler {
 func (h *handler) ServeHTTP(res http.ResponseWriter, req *http.Request) {
 	alert := &Alert{}
 
+	// Dead Man's Snitch will always use POST for webhooks
+	if req.Method != "POST" {
+		res.WriteHeader(http.StatusMethodNotAllowed)
+
+		return
+	}
+
 	dec := json.NewDecoder(req.Body)
 	if err := dec.Decode(alert); err != nil {
 		res.WriteHeader(http.StatusInternalServerError)
