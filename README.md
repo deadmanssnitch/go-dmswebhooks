@@ -2,7 +2,7 @@
 
 [![GoDoc](https://godoc.org/github.com/deadmanssnitch/go-dmswebhooks?status.svg)](http://godoc.org/github.com/deadmanssnitch/go-dmswebhooks)
 
-# Basic Usage:
+## Basic Usage:
 ```go
 // NewHandler takes a callback function which is called when alerts are received
 handler := dmswebhooks.NewHandler(
@@ -17,7 +17,7 @@ handler := dmswebhooks.NewHandler(
 
 ```
 
-# [Hipchat Example](https://github.com/deadmanssnitch/go-hipchat-example)
+## [Hipchat Example](https://github.com/deadmanssnitch/go-hipchat-example)
 
 For a more complete (and fully functional example) we've built a basic Hipchat
 alerter.
